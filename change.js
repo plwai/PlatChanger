@@ -1,6 +1,8 @@
-var injectCode = '(' + function() { Object.defineProperty(Object.getPrototypeOf(navigator), 'platform', {value: 'sb_baidu',}); } + ')();';
-
-var script = document.createElement('script');
-script.textContent = injectCode;
-document.documentElement.appendChild(script);
-script.remove();
+document.documentElement.appendChild(document.createElement("script")).textContent = `
+(() => {
+  var i = Array.prototype.indexOf;
+  Array.prototype.indexOf = function(n) {
+    return n != null && !isNaN(n) && n.length == 7 ? 0 : i.apply(this, arguments)
+  }
+})()
+`;
