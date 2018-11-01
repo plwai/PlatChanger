@@ -1,5 +1,5 @@
 function blockRequest(details) {
-  alert(details.url);
+  alert(details.url.replace('d.pcs.baidu.com', 'c.pcs.baidu.com'));
   return {cancel: true};
 }
 
