@@ -20,6 +20,19 @@
                     "*://pan.baidu.com/pcloud/album/*",
                     "*://yun.baidu.com/pcloud/album/*" ],
       "js": ["change.js"]
+    },
+    {
+      "run_at": "document_end",
+      "all_frames": true,
+      "matches": [ "*://pan.baidu.com/s/*",
+                    "*://yun.baidu.com/s/*",
+                    "*://pan.baidu.com/disk/home*",
+                    "*://yun.baidu.com/share/link*",
+                    "*://pan.baidu.com/share/link*",
+                    "*://yun.baidu.com/disk/home*",
+                    "*://pan.baidu.com/pcloud/album/*",
+                    "*://yun.baidu.com/pcloud/album/*" ],
+      "js": ["elementBinding.js"]
     }
   ],
   "permissions": [

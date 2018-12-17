@@ -1,5 +1,13 @@
 function blockRequest(details) {
-  alert(details.url.replace('d.pcs.baidu.com', 'c.pcs.baidu.com'));
+  chrome.tabs.executeScript({
+    code: `const url = '${details.url}';
+    const generatedLink = document.querySelector("#generated-link");
+    
+    generatedLink.href = url;
+    generatedLink.innerText = url;`
+  });
+  
+
   return {cancel: true};
 }
 
