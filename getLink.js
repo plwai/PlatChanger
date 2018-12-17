@@ -1,10 +1,13 @@
 function blockRequest(details) {
   chrome.tabs.executeScript({
-    code: `const url = '${details.url}';
-    const generatedLink = document.querySelector("#generated-link");
-    
-    generatedLink.href = url;
-    generatedLink.innerText = url;`
+    code: `
+    {
+      const url = '${details.url}';
+      const generatedLink = document.querySelector("#generated-link");
+      
+      generatedLink.href = url;
+      generatedLink.innerText = url;
+    }`
   });
   
 
